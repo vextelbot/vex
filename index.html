@@ -1,0 +1,1868 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#000000">
+    <title>VEX | لینک‌های من</title>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Baloo+Bhaijaan+2:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+/* ============================================================
+   VEX BIO LINK — Final Version
+   ============================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Vazirmatn', Tahoma, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+    --cyan: #00e5ff;
+    --blue: #0ea5e9;
+    --success: #10b981;
+    --purple: #a855f7;
+    --pink: #ec4899;
+    --gold: #fbbf24;
+    --bg-card: rgba(15, 18, 28, 0.75);
+    --bg-card-solid: rgba(15, 18, 28, 0.95);
+    --bg-item: rgba(20, 25, 38, 0.7);
+    --border-color: rgba(0, 229, 255, 0.18);
+    --text-primary: #ffffff;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+}
+
+body.light-mode {
+    --bg-card: rgba(255, 255, 255, 0.85);
+    --bg-card-solid: rgba(255, 255, 255, 0.95);
+    --bg-item: rgba(240, 249, 255, 0.75);
+    --border-color: rgba(6, 182, 212, 0.35);
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #000000 0%, #0a0a0f 25%, #0f0f1a 50%, #0a0a0f 75%, #000000 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 20s ease infinite;
+    position: relative;
+    padding: 70px 20px 40px;
+    overflow-x: hidden;
+    color: var(--text-primary);
+    transition: color 0.4s ease;
+}
+
+body.light-mode {
+    background: linear-gradient(-45deg, #e0f2fe, #ffffff, #67e8f9, #bae6fd, #ffffff, #67e8f9, #e0f2fe);
+    background-size: 400% 400%;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* ============ Bubbles ============ */
+.bg-bubbles {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,229,255,0.18) 0%, rgba(0,229,255,0) 70%);
+    animation: floatBubble 20s infinite ease-in-out;
+    filter: blur(2px);
+}
+.bubble:nth-child(1) { width: 220px; height: 220px; top: 8%; right: 12%; }
+.bubble:nth-child(2) { width: 140px; height: 140px; top: 45%; right: 3%; animation-delay: 3s; background: radial-gradient(circle, rgba(168,85,247,0.18) 0%, rgba(168,85,247,0) 70%); }
+.bubble:nth-child(3) { width: 280px; height: 280px; bottom: 8%; left: 8%; animation-delay: 5s; }
+.bubble:nth-child(4) { width: 100px; height: 100px; top: 18%; left: 20%; animation-delay: 7s; background: radial-gradient(circle, rgba(236,72,153,0.2) 0%, rgba(236,72,153,0) 70%); }
+.bubble:nth-child(5) { width: 180px; height: 180px; bottom: 25%; right: 18%; animation-delay: 9s; }
+.bubble:nth-child(6) { width: 130px; height: 130px; top: 65%; left: 40%; animation-delay: 11s; background: radial-gradient(circle, rgba(251,191,36,0.15) 0%, rgba(251,191,36,0) 70%); }
+
+@keyframes floatBubble {
+    0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+    33% { transform: translateY(-40px) rotate(120deg) scale(1.05); }
+    66% { transform: translateY(30px) rotate(240deg) scale(0.95); }
+}
+
+/* ============ Particles ============ */
+.particles {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+.particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: var(--cyan);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--cyan);
+    animation: particleFloat linear infinite;
+    opacity: 0.6;
+}
+@keyframes particleFloat {
+    0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+    10% { opacity: 0.7; }
+    90% { opacity: 0.7; }
+    100% { transform: translateY(-10vh) translateX(30px); opacity: 0; }
+}
+
+/* ============ Top Controls ============ */
+.top-controls {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    right: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    z-index: 100;
+    pointer-events: none;
+}
+
+.theme-toggle,
+.lang-toggle {
+    height: 46px;
+    border-radius: 14px;
+    background: var(--bg-card);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1.5px solid var(--border-color);
+    color: var(--text-primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    font-family: inherit;
+    pointer-events: auto;
+}
+
+.theme-toggle {
+    width: 46px;
+    color: var(--cyan);
+}
+.theme-toggle svg { width: 22px; height: 22px; }
+.theme-toggle:hover {
+    transform: scale(1.1) rotate(15deg);
+    border-color: var(--cyan);
+    box-shadow: 0 0 25px rgba(0, 229, 255, 0.5);
+}
+
+.lang-toggle {
+    padding: 0 14px;
+    gap: 8px;
+}
+.lang-flag { font-size: 18px; line-height: 1; }
+.lang-text {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--cyan);
+    direction: ltr;
+}
+.lang-toggle:hover {
+    transform: scale(1.05);
+    border-color: var(--cyan);
+    box-shadow: 0 0 25px rgba(0, 229, 255, 0.5);
+}
+
+/* ============ Top Promo Notification ============ */
+.promo-notification {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-150%);
+    max-width: 460px;
+    width: calc(100% - 32px);
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.95), rgba(236, 72, 153, 0.95));
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0 0 20px 20px;
+    padding: 14px 16px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow:
+        0 20px 60px -15px rgba(168, 85, 247, 0.8),
+        0 0 80px -20px rgba(236, 72, 153, 0.6);
+    transition: transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+    pointer-events: none;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+.promo-notification.show {
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+}
+
+.promo-notification:hover {
+    filter: brightness(1.1);
+}
+
+.promo-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    animation: promoIconPulse 1.5s ease-in-out infinite;
+}
+
+.promo-icon svg {
+    width: 22px;
+    height: 22px;
+    color: white;
+}
+
+@keyframes promoIconPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.promo-content {
+    flex: 1;
+    min-width: 0;
+    text-align: start;
+}
+
+.promo-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 3px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.promo-title svg {
+    width: 14px;
+    height: 14px;
+}
+
+.promo-text {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.promo-arrow {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.3s;
+}
+
+.promo-arrow svg {
+    width: 18px;
+    height: 18px;
+    color: white;
+}
+
+.promo-notification:hover .promo-arrow {
+    transform: translateX(-4px);
+}
+
+html[dir="ltr"] .promo-notification:hover .promo-arrow {
+    transform: translateX(4px);
+}
+
+html[dir="ltr"] .promo-arrow svg {
+    transform: rotate(180deg);
+}
+
+/* ============ Container ============ */
+.bio-container {
+    max-width: 480px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    animation: fadeInUp 0.8s ease;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============ Profile ============ */
+.profile-section {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 20px 16px 12px;
+    position: relative;
+}
+
+.avatar-wrapper {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar-glow {
+    position: absolute;
+    inset: -25px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,229,255,0.4) 0%, rgba(168,85,247,0.25) 40%, transparent 70%);
+    animation: glowPulse 3s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes glowPulse {
+    0%, 100% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.15); opacity: 1; }
+}
+
+.avatar-ring {
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    padding: 3px;
+    background: conic-gradient(
+        from 0deg,
+        var(--cyan),
+        var(--purple),
+        var(--pink),
+        var(--gold),
+        var(--cyan)
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: ringRotate 8s linear infinite;
+    z-index: 1;
+}
+
+.avatar-ring.second {
+    inset: -14px;
+    padding: 2px;
+    opacity: 0.55;
+    animation-duration: 12s;
+    animation-direction: reverse;
+}
+
+@keyframes ringRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.avatar {
+    width: 136px;
+    height: 136px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0a0e1a 0%, #0f172a 100%);
+    border: 3px solid rgba(0, 229, 255, 0.6);
+    box-shadow:
+        0 0 40px rgba(0, 229, 255, 0.6),
+        0 0 80px rgba(168, 85, 247, 0.3),
+        inset 0 0 30px rgba(0, 229, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 3;
+    transition: transform 0.4s ease;
+}
+
+.avatar:hover {
+    transform: scale(1.05);
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    filter: brightness(1.05) contrast(1.05);
+}
+
+.avatar-fallback {
+    font-family: 'Baloo Bhaijaan 2', 'Orbitron', sans-serif;
+    font-size: 60px;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--cyan), var(--purple));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 2px;
+}
+
+.online-dot {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    width: 22px;
+    height: 22px;
+    background: var(--success);
+    border: 3px solid var(--bg-card-solid);
+    border-radius: 50%;
+    z-index: 4;
+    box-shadow: 0 0 15px var(--success);
+    animation: onlinePulse 2s ease-in-out infinite;
+}
+
+@keyframes onlinePulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 15px var(--success); }
+    50% { transform: scale(1.15); box-shadow: 0 0 30px var(--success); }
+}
+
+/* ============ Name VEX ============ */
+.profile-name {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    direction: ltr;
+}
+
+.name-bubble {
+    font-family: 'Baloo Bhaijaan 2', 'Orbitron', 'Vazirmatn', sans-serif;
+    font-size: 52px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    line-height: 1;
+    background: linear-gradient(135deg, #ffffff 0%, var(--cyan) 50%, var(--purple) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    display: inline-block;
+    filter: drop-shadow(0 0 20px rgba(0, 229, 255, 0.7)) drop-shadow(0 0 40px rgba(168, 85, 247, 0.4));
+    animation: bubbleFloat 3s ease-in-out infinite;
+    padding: 4px 8px;
+}
+
+.name-bubble::before {
+    content: attr(data-text);
+    position: absolute;
+    inset: 4px 8px;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
+    background: linear-gradient(135deg, rgba(0, 229, 255, 0.4), rgba(168, 85, 247, 0.4));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: blur(15px);
+    z-index: -1;
+    opacity: 0.9;
+}
+
+.name-bubble::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 12px;
+    width: 14px;
+    height: 14px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.9), transparent 70%);
+    border-radius: 50%;
+    animation: bubbleShine 4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes bubbleFloat {
+    0%, 100% { transform: translateY(0) rotate(-1deg); }
+    50% { transform: translateY(-4px) rotate(1deg); }
+}
+
+@keyframes bubbleShine {
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.3); }
+}
+
+.verified-badge {
+    width: 30px;
+    height: 30px;
+    color: var(--cyan);
+    filter: drop-shadow(0 0 12px rgba(0,229,255,0.95));
+    animation: badgeFloat 3s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
+@keyframes badgeFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-3px) rotate(5deg); }
+}
+
+.profile-bio {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 16px;
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tagline {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--cyan);
+    font-weight: 700;
+    direction: ltr;
+    padding: 8px 16px;
+    background: rgba(0,229,255,0.06);
+    border: 1px solid rgba(0,229,255,0.25);
+    border-radius: 20px;
+}
+
+.tagline-dot {
+    width: 4px;
+    height: 4px;
+    background: var(--cyan);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--cyan);
+}
+
+/* ============ Experience Badge ============ */
+.experience-badge {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.12), rgba(245, 158, 11, 0.06));
+    border: 1.5px solid rgba(251, 191, 36, 0.4);
+    border-radius: 20px;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+    animation: expSlide 0.7s ease;
+}
+
+@keyframes expSlide {
+    from { opacity: 0; transform: translateY(-15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.exp-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    animation: expShine 3s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes expShine {
+    0% { left: -100%; }
+    100% { left: 200%; }
+}
+
+.exp-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, var(--gold), #f59e0b);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #050508;
+    box-shadow: 0 0 25px rgba(251, 191, 36, 0.5);
+    animation: expIconPulse 2.5s ease-in-out infinite;
+}
+
+.exp-icon svg { width: 26px; height: 26px; }
+
+@keyframes expIconPulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 25px rgba(251, 191, 36, 0.5); }
+    50% { transform: scale(1.05); box-shadow: 0 0 35px rgba(251, 191, 36, 0.8); }
+}
+
+.exp-content {
+    flex: 1;
+    min-width: 0;
+    text-align: start;
+}
+
+.exp-number {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin-bottom: 4px;
+    direction: ltr;
+    justify-content: flex-start;
+}
+
+html[dir="rtl"] .exp-number {
+    direction: rtl;
+}
+
+.exp-number-value {
+    font-family: 'Baloo Bhaijaan 2', 'Vazirmatn', sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--gold), #f59e0b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.6));
+    line-height: 1;
+}
+
+.exp-number-year {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--gold);
+}
+
+.exp-label {
+    color: #fcd34d;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.7;
+}
+
+body.light-mode .exp-label { color: #92400e; }
+
+/* ============ Links ============ */
+.links-section {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.bio-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 20px;
+    background: var(--bg-card);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1.5px solid var(--border-color);
+    border-radius: 20px;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    overflow: hidden;
+    cursor: pointer;
+    animation: linkSlideIn 0.6s ease backwards;
+}
+
+.bio-link:nth-child(1) { animation-delay: 0.1s; }
+.bio-link:nth-child(2) { animation-delay: 0.2s; }
+.bio-link:nth-child(3) { animation-delay: 0.3s; }
+.bio-link:nth-child(4) { animation-delay: 0.4s; }
+.bio-link:nth-child(5) { animation-delay: 0.5s; }
+.bio-link:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes linkSlideIn {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.bio-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 229, 255, 0.08));
+    transition: width 0.5s ease;
+    pointer-events: none;
+}
+
+.bio-link:hover::before { width: 100%; }
+
+.bio-link:hover {
+    transform: translateY(-4px) scale(1.01);
+    border-color: rgba(0, 229, 255, 0.6);
+    box-shadow: 0 15px 40px -10px rgba(0, 229, 255, 0.5);
+}
+
+.bio-link:active {
+    transform: translateY(-2px) scale(0.99);
+}
+
+.bio-link.featured {
+    border-color: rgba(168, 85, 247, 0.5);
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.12), rgba(236, 72, 153, 0.08));
+}
+
+.bio-link.featured:hover {
+    border-color: var(--purple);
+    box-shadow: 0 15px 40px -10px rgba(168, 85, 247, 0.6);
+}
+
+.link-badge {
+    position: absolute;
+    top: -1px;
+    left: 16px;
+    background: linear-gradient(135deg, var(--purple), var(--pink));
+    color: white;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 0 0 10px 10px;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px -5px rgba(168, 85, 247, 0.8);
+}
+
+.link-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s;
+    position: relative;
+    z-index: 2;
+}
+
+.link-icon svg { width: 26px; height: 26px; }
+
+.link-icon.telegram {
+    background: linear-gradient(135deg, #0088cc, #00a8e8);
+    box-shadow: 0 0 25px rgba(0, 168, 232, 0.5);
+    color: white;
+}
+
+.link-icon.bot {
+    background: linear-gradient(135deg, var(--cyan), var(--blue));
+    box-shadow: 0 0 25px rgba(0, 229, 255, 0.5);
+    color: #050508;
+}
+
+.link-icon.panel {
+    background: linear-gradient(135deg, var(--purple), var(--pink));
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.5);
+    color: white;
+}
+
+.link-icon.channel {
+    background: linear-gradient(135deg, var(--success), #059669);
+    box-shadow: 0 0 25px rgba(16, 185, 129, 0.5);
+    color: white;
+}
+
+.link-icon.instagram {
+    background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    box-shadow: 0 0 25px rgba(220, 39, 67, 0.5);
+    color: white;
+}
+
+.link-icon.email {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    box-shadow: 0 0 25px rgba(239, 68, 68, 0.5);
+    color: white;
+}
+
+.bio-link:hover .link-icon {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.link-content {
+    flex: 1;
+    min-width: 0;
+    text-align: start;
+    position: relative;
+    z-index: 2;
+}
+
+.link-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+    transition: color 0.3s;
+}
+
+.bio-link:hover .link-title { color: var(--cyan); }
+.bio-link.featured:hover .link-title { color: var(--purple); }
+
+.link-sub {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-align: start;
+    font-weight: 500;
+    line-height: 1.6;
+    direction: ltr;
+}
+
+html[dir="rtl"] .link-sub.email-sub {
+    direction: ltr;
+    text-align: start;
+}
+
+.link-arrow {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    transition: all 0.3s;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.link-arrow svg { width: 20px; height: 20px; }
+
+.bio-link:hover .link-arrow {
+    color: var(--cyan);
+    transform: translateX(-6px);
+}
+
+html[dir="ltr"] .bio-link:hover .link-arrow {
+    transform: translateX(6px) rotate(180deg);
+}
+
+html[dir="ltr"] .link-arrow svg {
+    transform: rotate(180deg);
+}
+
+.bio-link.featured:hover .link-arrow { color: var(--purple); }
+
+/* ============ Socials ============ */
+.socials-section {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    background: var(--bg-card);
+    backdrop-filter: blur(24px);
+    border: 1.5px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.social-btn svg { width: 24px; height: 24px; }
+
+.social-btn:hover {
+    transform: translateY(-5px) scale(1.08);
+    border-color: var(--cyan);
+    color: var(--cyan);
+    box-shadow: 0 10px 30px -8px rgba(0, 229, 255, 0.6);
+}
+
+/* ============ Stats ============ */
+.stats-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+    padding: 20px 16px;
+    background: var(--bg-card);
+    backdrop-filter: blur(24px);
+    border: 1.5px solid var(--border-color);
+    border-radius: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.stats-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+}
+
+.stat-item {
+    flex: 1;
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--cyan);
+    direction: ltr;
+    margin-bottom: 4px;
+    text-shadow: 0 0 15px rgba(0, 229, 255, 0.5);
+    font-family: 'Courier New', monospace;
+    transition: all 0.4s ease;
+    display: inline-block;
+    min-height: 22px;
+}
+
+.stat-value.bump {
+    color: var(--gold);
+    transform: scale(1.2);
+    text-shadow: 0 0 25px rgba(251, 191, 36, 0.9);
+}
+
+.stat-label {
+    font-size: 10px;
+    color: var(--text-muted);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.stat-divider {
+    width: 1px;
+    height: 30px;
+    background: var(--border-color);
+    flex-shrink: 0;
+}
+
+/* ============ Footer ============ */
+.bio-footer {
+    text-align: center;
+    padding: 20px 10px 10px;
+    border-top: 1px dashed var(--border-color);
+}
+
+.footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-brand-text {
+    font-family: 'Baloo Bhaijaan 2', 'Orbitron', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    background: linear-gradient(135deg, var(--cyan), var(--purple));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    direction: ltr;
+}
+
+.footer-brand-year {
+    color: var(--text-muted);
+    font-size: 11px;
+    font-weight: 600;
+    direction: ltr;
+}
+
+/* ============ Toast ============ */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(120px);
+    background: var(--bg-card-solid);
+    backdrop-filter: blur(24px);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 14px 22px;
+    color: var(--text-primary);
+    font-size: 13px;
+    font-weight: 700;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.8);
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    pointer-events: none;
+    opacity: 0;
+    max-width: calc(100% - 40px);
+}
+
+.toast.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+.toast.success {
+    border-color: rgba(16, 185, 129, 0.5);
+    color: var(--success);
+    box-shadow: 0 20px 50px -15px rgba(16, 185, 129, 0.4);
+}
+
+.toast.info {
+    border-color: rgba(0, 229, 255, 0.5);
+    color: var(--cyan);
+    box-shadow: 0 20px 50px -15px rgba(0, 229, 255, 0.4);
+}
+
+.toast svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+/* ============ RTL/LTR ============ */
+html[dir="ltr"] .bio-link {
+    animation-name: linkSlideInLtr;
+}
+@keyframes linkSlideInLtr {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+html[dir="ltr"] .bio-link::before {
+    right: auto;
+    left: 0;
+    background: linear-gradient(-90deg, transparent, rgba(0, 229, 255, 0.08));
+}
+
+/* ============ Responsive ============ */
+@media (max-width: 480px) {
+    body { padding: 64px 16px 32px; }
+
+    .profile-name { gap: 8px; }
+    .name-bubble { font-size: 44px; letter-spacing: 3px; }
+    .verified-badge { width: 26px; height: 26px; }
+
+    .avatar-wrapper { width: 130px; height: 130px; }
+    .avatar { width: 116px; height: 116px; }
+    .avatar-fallback { font-size: 50px; }
+    .online-dot { width: 20px; height: 20px; bottom: 10px; right: 10px; }
+
+    .link-icon { width: 46px; height: 46px; border-radius: 14px; }
+    .link-icon svg { width: 22px; height: 22px; }
+    .link-title { font-size: 14px; }
+    .link-sub { font-size: 11px; }
+    .bio-link { padding: 15px 16px; gap: 12px; }
+
+    .social-btn { width: 46px; height: 46px; border-radius: 14px; }
+    .social-btn svg { width: 20px; height: 20px; }
+
+    .stat-value { font-size: 16px; }
+
+    .theme-toggle,
+    .lang-toggle { height: 42px; }
+    .theme-toggle { width: 42px; }
+    .lang-toggle { padding: 0 12px; }
+
+    .experience-badge { padding: 14px 16px; gap: 12px; }
+    .exp-icon { width: 46px; height: 46px; }
+    .exp-icon svg { width: 22px; height: 22px; }
+    .exp-number-value { font-size: 26px; }
+    .exp-number-year { font-size: 14px; }
+    .exp-label { font-size: 11px; }
+
+    .promo-notification { padding: 12px 14px; gap: 10px; }
+    .promo-icon { width: 38px; height: 38px; }
+    .promo-icon svg { width: 18px; height: 18px; }
+    .promo-title { font-size: 12px; }
+    .promo-text { font-size: 10px; }
+    .promo-arrow { width: 28px; height: 28px; }
+}
+    </style>
+</head>
+<body>
+
+    <!-- Background -->
+    <div class="bg-bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+    <div class="particles" id="particles"></div>
+
+    <!-- Top Controls -->
+    <div class="top-controls">
+        <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle Theme">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" id="themeIcon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+        </button>
+        <button class="lang-toggle" id="langToggle" onclick="toggleLanguage()" title="Change Language">
+            <span class="lang-flag" id="langFlag">🇮🇷</span>
+            <span class="lang-text" id="langText">FA</span>
+        </button>
+    </div>
+
+    <!-- Promo Notification -->
+    <a href="https://sadwad2.github.io/vex/" target="_blank" class="promo-notification" id="promoNotification">
+        <div class="promo-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+        </div>
+        <div class="promo-content">
+            <div class="promo-title">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                <span data-i18n="promo_title">🔥 پنل خرید وکس</span>
+            </div>
+            <div class="promo-text" data-i18n="promo_text">
+                خرید VPN و خدمات سوشال میدیا — کلیک کنید
+            </div>
+        </div>
+        <div class="promo-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+        </div>
+    </a>
+
+    <!-- Main -->
+    <main class="bio-container">
+
+        <!-- Profile -->
+        <section class="profile-section">
+            <div class="avatar-wrapper">
+                <div class="avatar-glow"></div>
+                <div class="avatar-ring"></div>
+                <div class="avatar-ring second"></div>
+                <div class="avatar">
+                    <img src="https://cdn.imgurl.ir/uploads/j0904_msg45237068-49764.jpg"
+                         alt="VEX"
+                         onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'avatar-fallback\'>V</div>';">
+                </div>
+                <span class="online-dot" title="Online"></span>
+            </div>
+
+            <h1 class="profile-name">
+                <span class="name-bubble" data-text="VEX">VEX</span>
+                <svg class="verified-badge" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 1.5l2.4 2.4 3.4-.6.6 3.4 2.4 2.4-1.4 3.2 1.4 3.2-2.4 2.4-.6 3.4-3.4-.6L12 22.5l-2.4-2.4-3.4.6-.6-3.4L3.2 14.9 4.6 11.7 3.2 8.5l2.4-2.4.6-3.4 3.4.6L12 1.5zm-1.4 13.9l5.7-5.7-1.4-1.4-4.3 4.3-1.9-1.9-1.4 1.4 3.3 3.3z"/>
+                </svg>
+            </h1>
+
+            <p class="profile-bio" data-i18n="bio">
+                فروش VPN و سرویس‌های سوشال مدیا
+            </p>
+
+            <div class="tagline">
+                <span class="tagline-dot"></span>
+                <span>SECURE • VERIFY • TRUST</span>
+                <span class="tagline-dot"></span>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="experience-badge">
+            <div class="exp-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                </svg>
+            </div>
+            <div class="exp-content">
+                <div class="exp-number">
+                    <span class="exp-number-value" data-i18n="exp_number">۵</span>
+                    <span class="exp-number-year" data-i18n="years">سال</span>
+                </div>
+                <div class="exp-label" data-i18n="experience">
+                    سابقه کار در خدمات اینستاگرام و فروش VPN
+                </div>
+            </div>
+            <div class="exp-shine"></div>
+        </section>
+
+        <!-- Links -->
+        <section class="links-section">
+
+            <!-- Telegram -->
+            <a href="https://t.me/vex_telbot" target="_blank" class="bio-link" data-link="telegram">
+                <div class="link-icon telegram">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                    </svg>
+                </div>
+                <div class="link-content">
+                    <div class="link-title" data-i18n="link_telegram_title">تلگرام</div>
+                    <div class="link-sub">@vex_telbot</div>
+                </div>
+                <div class="link-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </div>
+            </a>
+
+            <!-- Bots -->
+            <a href="https://t.me/vex_telbot/38" target="_blank" class="bio-link" data-link="bots">
+                <div class="link-icon bot">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                </div>
+                <div class="link-content">
+                    <div class="link-title" data-i18n="link_bots_title">بات های تلگرامی وکس</div>
+                    <div class="link-sub" data-i18n="link_bots_sub">مجموعه بات‌های هوشمند</div>
+                </div>
+                <div class="link-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </div>
+            </a>
+
+            <!-- Panel (Featured) -->
+            <a href="https://sadwad2.github.io/vex/" target="_blank" class="bio-link featured" data-link="panel">
+                <div class="link-badge" data-i18n="badge_new">جدید</div>
+                <div class="link-icon panel">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                </div>
+                <div class="link-content">
+                    <div class="link-title" data-i18n="link_panel_title">پنل خرید وکس</div>
+                    <div class="link-sub" data-i18n="link_panel_sub">پنل خرید VPN و خدمات سوشال میدیا</div>
+                </div>
+                <div class="link-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </div>
+            </a>
+
+            <!-- Android App -->
+            <a href="https://t.me/vex_telbot/56" target="_blank" class="bio-link" data-link="app">
+                <div class="link-icon channel">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                    </svg>
+                </div>
+                <div class="link-content">
+                    <div class="link-title" data-i18n="link_app_title">اپلیکیشن اندروید وکس</div>
+                    <div class="link-sub" data-i18n="link_app_sub">دانلود مستقیم APK</div>
+                </div>
+                <div class="link-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </div>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/vextelbot?stkn=MTdwZzlzNGVoMWJ1cQ%3D%3D&utm_source=qr" target="_blank" class="bio-link" data-link="instagram">
+                <div class="link-icon instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </div>
+                <div class="link-content">
+                    <div class="link-title" data-i18n="link_instagram_title">اینستاگرام</div>
+                    <div class="link-sub">@vextelbot</div>
+                </div>
+                <div class="link-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </div>
+            </a>
+
+            <!-- Email — NEW -->
+            <a href="mailto:vextelbot@gmail.com" class="bio-link" data-link="email">
+                <div class="link-icon email">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                </div>
+                <div class="link-content">
+                    <div class="link-title" data-i18n="link_email_title">ایمیل پشتیبانی</div>
+                    <div class="link-sub email-sub">vextelbot@gmail.com</div>
+                </div>
+                <div class="link-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </div>
+            </a>
+
+        </section>
+
+        <!-- Socials -->
+        <section class="socials-section">
+            <a href="https://t.me/vex_telbot" target="_blank" class="social-btn" title="Telegram">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                </svg>
+            </a>
+            <a href="https://www.instagram.com/vextelbot?stkn=MTdwZzlzNGVoMWJ1cQ%3D%3D&utm_source=qr" target="_blank" class="social-btn" title="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+            </a>
+            <a href="https://sadwad2.github.io/vex/" target="_blank" class="social-btn" title="Panel">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+            </a>
+            <a href="mailto:vextelbot@gmail.com" class="social-btn" title="Email">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+            </a>
+        </section>
+
+        <!-- Stats -->
+        <section class="stats-section">
+            <div class="stat-item">
+                <div class="stat-value" id="statViews">0</div>
+                <div class="stat-label" data-i18n="stat_views">بازدید</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <div class="stat-value">۲۴/۷</div>
+                <div class="stat-label" data-i18n="stat_support">پشتیبانی</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <div class="stat-value" id="statClicks">0</div>
+                <div class="stat-label" data-i18n="stat_clicks">کلیک</div>
+            </div>
+        </section>
+
+        <!-- Footer — فقط برند -->
+        <footer class="bio-footer">
+            <div class="footer-brand">
+                <span class="footer-brand-text">VEX</span>
+                <span class="footer-brand-year">© <span id="year"></span></span>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <script>
+/* ============================================================
+   VEX BIO LINK — Final Logic
+   ============================================================ */
+
+// ============================================================
+// CONFIG
+// ============================================================
+const CONFIG = {
+    storageKeys: {
+        theme: 'vex_bio_theme',
+        lang: 'vex_bio_lang',
+        views: 'vex_bio_views',
+        clicks: 'vex_bio_clicks',
+        session: 'vex_bio_session'
+    },
+    viewIntervalMs: 60 * 1000,    // هر دقیقه +1 بازدید
+    promoIntervalMs: 10 * 1000,   // هر ۱۰ ثانیه نوتیفیکیشن تبلیغ
+    promoVisibleMs: 6 * 1000,     // ۶ ثانیه نمایش
+    initialViews: 1247,
+    initialClicks: 523
+};
+
+// ============================================================
+// TRANSLATIONS
+// ============================================================
+const I18N = {
+    fa: {
+        bio: 'فروش VPN و سرویس‌های سوشال مدیا',
+        years: 'سال',
+        exp_number: '۵',
+        experience: 'سابقه کار در خدمات اینستاگرام و فروش VPN',
+        link_telegram_title: 'تلگرام',
+        link_bots_title: 'بات های تلگرامی وکس',
+        link_bots_sub: 'مجموعه بات‌های هوشمند',
+        link_panel_title: 'پنل خرید وکس',
+        link_panel_sub: 'پنل خرید VPN و خدمات سوشال میدیا',
+        link_app_title: 'اپلیکیشن اندروید وکس',
+        link_app_sub: 'دانلود مستقیم APK',
+        link_instagram_title: 'اینستاگرام',
+        link_email_title: 'ایمیل پشتیبانی',
+        badge_new: 'جدید',
+        stat_views: 'بازدید',
+        stat_support: 'پشتیبانی',
+        stat_clicks: 'کلیک',
+        promo_title: '🔥 پنل خرید وکس',
+        promo_text: 'خرید VPN و خدمات سوشال میدیا — کلیک کنید',
+        toast_theme_dark: '🌙 حالت شب فعال شد',
+        toast_theme_light: '☀️ حالت روز فعال شد',
+        toast_welcome: '👋 خوش آمدید به VEX',
+        toast_lang_fa: '🇮🇷 زبان به فارسی تغییر کرد',
+        toast_lang_en: '🇬🇧 Language changed to English',
+        tab_hidden: '😢 منتظرت هستیم...'
+    },
+    en: {
+        bio: 'VPN & Social Media Services',
+        years: 'Years',
+        exp_number: '5',
+        experience: 'Experience in Instagram Services & VPN Sales',
+        link_telegram_title: 'Telegram',
+        link_bots_title: 'VEX Telegram Bots',
+        link_bots_sub: 'Collection of smart bots',
+        link_panel_title: 'VEX Purchase Panel',
+        link_panel_sub: 'VPN & Social Media services panel',
+        link_app_title: 'VEX Android App',
+        link_app_sub: 'Direct APK Download',
+        link_instagram_title: 'Instagram',
+        link_email_title: 'Support Email',
+        badge_new: 'NEW',
+        stat_views: 'Views',
+        stat_support: 'Support',
+        stat_clicks: 'Clicks',
+        promo_title: '🔥 VEX Purchase Panel',
+        promo_text: 'Buy VPN & Social Media Services — Click here',
+        toast_theme_dark: '🌙 Dark mode enabled',
+        toast_theme_light: '☀️ Light mode enabled',
+        toast_welcome: '👋 Welcome to VEX',
+        toast_lang_fa: '🇮🇷 زبان به فارسی تغییر کرد',
+        toast_lang_en: '🇬🇧 Language changed to English',
+        tab_hidden: '😢 Waiting for you...'
+    }
+};
+
+let currentLang = 'fa';
+
+function t(key) {
+    return (I18N[currentLang] && I18N[currentLang][key]) || key;
+}
+
+// ============================================================
+// THEME
+// ============================================================
+const THEME_ICONS = {
+    dark: '<path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />',
+    light: '<path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />'
+};
+
+function initTheme() {
+    const saved = localStorage.getItem(CONFIG.storageKeys.theme) || 'dark';
+    applyTheme(saved);
+}
+
+function applyTheme(theme) {
+    const body = document.body;
+    const icon = document.getElementById('themeIcon');
+
+    if (theme === 'light') {
+        body.classList.add('light-mode');
+        if (icon) icon.innerHTML = THEME_ICONS.light;
+    } else {
+        body.classList.remove('light-mode');
+        if (icon) icon.innerHTML = THEME_ICONS.dark;
+    }
+
+    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+    if (metaThemeColor) metaThemeColor.content = theme === 'light' ? '#e0f2fe' : '#000000';
+}
+
+function toggleTheme() {
+    const current = document.body.classList.contains('light-mode') ? 'light' : 'dark';
+    const next = current === 'light' ? 'dark' : 'light';
+
+    const btn = document.getElementById('themeToggle');
+    if (btn) {
+        btn.style.transform = 'rotate(360deg) scale(1.15)';
+        setTimeout(() => { btn.style.transform = ''; }, 400);
+    }
+
+    applyTheme(next);
+    localStorage.setItem(CONFIG.storageKeys.theme, next);
+
+    showToast(next === 'light' ? t('toast_theme_light') : t('toast_theme_dark'), 'info');
+}
+
+// ============================================================
+// LANGUAGE
+// ============================================================
+function initLanguage() {
+    const saved = localStorage.getItem(CONFIG.storageKeys.lang) || 'fa';
+    applyLanguage(saved);
+}
+
+function applyLanguage(lang) {
+    currentLang = (lang === 'en') ? 'en' : 'fa';
+
+    document.documentElement.lang = currentLang;
+    document.documentElement.dir = currentLang === 'fa' ? 'rtl' : 'ltr';
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        const val = t(key);
+        if (val) el.textContent = val;
+    });
+
+    const flag = document.getElementById('langFlag');
+    const text = document.getElementById('langText');
+    if (flag) flag.textContent = currentLang === 'fa' ? '🇮🇷' : '🇬🇧';
+    if (text) text.textContent = currentLang === 'fa' ? 'FA' : 'EN';
+
+    document.title = currentLang === 'fa' ? 'VEX | لینک‌های من' : 'VEX | My Links';
+
+    localStorage.setItem(CONFIG.storageKeys.lang, currentLang);
+}
+
+function toggleLanguage() {
+    const next = currentLang === 'fa' ? 'en' : 'fa';
+    applyLanguage(next);
+    showToast(next === 'fa' ? t('toast_lang_fa') : t('toast_lang_en'), 'success');
+}
+
+// ============================================================
+// PARTICLES
+// ============================================================
+function createParticles() {
+    const container = document.getElementById('particles');
+    if (!container) return;
+
+    const count = window.innerWidth < 480 ? 20 : 35;
+
+    for (let i = 0; i < count; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+
+        const size = Math.random() * 3 + 1;
+        const left = Math.random() * 100;
+        const duration = Math.random() * 15 + 15;
+        const delay = Math.random() * 20;
+        const colors = ['var(--cyan)', 'var(--purple)', 'var(--pink)', 'var(--gold)'];
+        const color = colors[Math.floor(Math.random() * colors.length)];
+
+        p.style.width = size + 'px';
+        p.style.height = size + 'px';
+        p.style.left = left + '%';
+        p.style.background = color;
+        p.style.boxShadow = '0 0 8px ' + color;
+        p.style.animationDuration = duration + 's';
+        p.style.animationDelay = '-' + delay + 's';
+
+        container.appendChild(p);
+    }
+}
+
+// ============================================================
+// TOAST
+// ============================================================
+let _toastTimer = null;
+
+function showToast(message, type) {
+    type = type || 'info';
+    const toast = document.getElementById('toast');
+    if (!toast) return;
+
+    const icons = {
+        success: '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>',
+        info: '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>',
+        warning: '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>'
+    };
+
+    toast.className = 'toast ' + type;
+    toast.innerHTML = (icons[type] || icons.info) + '<span>' + message + '</span>';
+    toast.classList.add('show');
+
+    clearTimeout(_toastTimer);
+    _toastTimer = setTimeout(() => toast.classList.remove('show'), 3000);
+}
+
+// ============================================================
+// PROMO NOTIFICATION (every 10s)
+// ============================================================
+let _promoVisibleTimer = null;
+
+function initPromoNotification() {
+    const promo = document.getElementById('promoNotification');
+    if (!promo) return;
+
+    // اولین نمایش بعد از ۳ ثانیه
+    setTimeout(() => showPromo(), 3000);
+
+    // هر ۱۰ ثانیه
+    setInterval(() => {
+        // اگه کاربر تب رو بسته باشه، نشون نده
+        if (document.hidden) return;
+        showPromo();
+    }, CONFIG.promoIntervalMs);
+}
+
+function showPromo() {
+    const promo = document.getElementById('promoNotification');
+    if (!promo) return;
+
+    promo.classList.add('show');
+
+    clearTimeout(_promoVisibleTimer);
+    _promoVisibleTimer = setTimeout(() => {
+        promo.classList.remove('show');
+    }, CONFIG.promoVisibleMs);
+}
+
+// ============================================================
+// FORMAT NUMBER
+// ============================================================
+function formatNumber(num) {
+    return Math.round(num).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
+// ============================================================
+// ANIMATE COUNTER
+// ============================================================
+function animateCounter(elementId, start, end, duration) {
+    const el = document.getElementById(elementId);
+    if (!el) return;
+
+    const startTime = performance.now();
+    const diff = end - start;
+
+    function tick(now) {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+        const current = Math.round(start + diff * eased);
+
+        el.textContent = formatNumber(current);
+
+        if (progress < 1) {
+            requestAnimationFrame(tick);
+        } else {
+            el.textContent = formatNumber(end);
+        }
+    }
+
+    requestAnimationFrame(tick);
+}
+
+// ============================================================
+// VIEWS — Persistent (never resets)
+// ============================================================
+function initViewsCounter() {
+    try {
+        const KEY = CONFIG.storageKeys.views;
+        const SESSION_KEY = CONFIG.storageKeys.session;
+
+        // 1) خواندن مقدار ذخیره شده
+        let stored = parseInt(localStorage.getItem(KEY) || '0', 10);
+
+        // اگه nan یا کمتر از حد پایه بود، از حد پایه شروع کن
+        if (isNaN(stored) || stored < CONFIG.initialViews) {
+            stored = CONFIG.initialViews;
+        }
+
+        // 2) فقط یک‌بار در هر session +1
+        const hasSession = sessionStorage.getItem(SESSION_KEY);
+        if (!hasSession) {
+            stored += 1;
+            sessionStorage.setItem(SESSION_KEY, '1');
+        }
+
+        // 3) ذخیره همیشگی
+        localStorage.setItem(KEY, stored.toString());
+
+        // 4) نمایش
+        updateViewStat(stored, false);
+
+        // 5) هر ۶۰ ثانیه +1
+        setInterval(() => {
+            try {
+                const KEY = CONFIG.storageKeys.views;
+                let current = parseInt(localStorage.getItem(KEY) || '0', 10);
+                if (isNaN(current)) current = CONFIG.initialViews;
+
+                current += 1;
+                localStorage.setItem(KEY, current.toString());
+                updateViewStat(current, true);
+            } catch (err) {
+                console.warn('increment error:', err);
+            }
+        }, CONFIG.viewIntervalMs);
+
+    } catch (err) {
+        console.warn('initViewsCounter error:', err);
+        updateViewStat(CONFIG.initialViews, false);
+    }
+}
+
+function updateViewStat(total, animate) {
+    const el = document.getElementById('statViews');
+    if (!el) return;
+
+    if (animate) {
+        const currentText = parseInt((el.textContent || '0').replace(/,/g, ''), 10) || 0;
+        animateCounter('statViews', currentText, total, 500);
+        el.classList.add('bump');
+        setTimeout(() => el.classList.remove('bump'), 500);
+    } else {
+        animateCounter('statViews', 0, total, 1500);
+    }
+}
+
+// ============================================================
+// CLICKS
+// ============================================================
+function initClicksCounter() {
+    try {
+        const KEY = CONFIG.storageKeys.clicks;
+        const clicks = JSON.parse(localStorage.getItem(KEY) || '{}');
+        let total = clicks._total || 0;
+
+        if (total < CONFIG.initialClicks) {
+            total = CONFIG.initialClicks;
+            clicks._total = total;
+            localStorage.setItem(KEY, JSON.stringify(clicks));
+        }
+
+        animateCounter('statClicks', 0, total, 1500);
+    } catch (err) {
+        animateCounter('statClicks', 0, CONFIG.initialClicks, 1500);
+    }
+}
+
+function recordClick(linkName) {
+    try {
+        const KEY = CONFIG.storageKeys.clicks;
+        const clicks = JSON.parse(localStorage.getItem(KEY) || '{}');
+
+        clicks[linkName] = (clicks[linkName] || 0) + 1;
+        clicks._total = (clicks._total || 0) + 1;
+
+        localStorage.setItem(KEY, JSON.stringify(clicks));
+
+        const el = document.getElementById('statClicks');
+        if (el) {
+            el.textContent = formatNumber(clicks._total);
+            el.classList.add('bump');
+            setTimeout(() => el.classList.remove('bump'), 500);
+        }
+    } catch (err) {
+        console.warn('recordClick error:', err);
+    }
+}
+
+// ============================================================
+// CLICK TRACKING + RIPPLE
+// ============================================================
+function initClickTracking() {
+    document.querySelectorAll('.bio-link').forEach(link => {
+        link.addEventListener('click', () => {
+            const name = link.dataset.link || 'unknown';
+            recordClick(name);
+            createRipple(link);
+        });
+    });
+
+    document.querySelectorAll('.social-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            recordClick('social');
+        });
+    });
+}
+
+function createRipple(element) {
+    if (!document.getElementById('rippleStyle')) {
+        const style = document.createElement('style');
+        style.id = 'rippleStyle';
+        style.textContent = '@keyframes rippleAnim { to { transform: scale(20); opacity: 0; } }';
+        document.head.appendChild(style);
+    }
+
+    const ripple = document.createElement('span');
+    ripple.style.cssText =
+        'position:absolute;border-radius:50%;background:rgba(0,229,255,0.4);' +
+        'transform:scale(0);animation:rippleAnim 0.7s ease-out;pointer-events:none;' +
+        'width:20px;height:20px;top:50%;left:50%;margin-top:-10px;margin-left:-10px;z-index:1;';
+
+    if (getComputedStyle(element).position === 'static') {
+        element.style.position = 'relative';
+    }
+    element.style.overflow = 'hidden';
+
+    element.appendChild(ripple);
+    setTimeout(() => ripple.remove(), 700);
+}
+
+// ============================================================
+// PAGE TITLE EFFECT
+// ============================================================
+function initPageTitleEffect() {
+    const originalTitle = document.title;
+    document.addEventListener('visibilitychange', () => {
+        document.title = document.hidden ? t('tab_hidden') : originalTitle;
+    });
+}
+
+// ============================================================
+// KEYBOARD SHORTCUTS
+// ============================================================
+function initKeyboardShortcuts() {
+    document.addEventListener('keydown', (e) => {
+        const tag = (e.target.tagName || '').toLowerCase();
+        if (tag === 'input' || tag === 'textarea') return;
+
+        if ((e.key === 't' || e.key === 'T') && !e.ctrlKey && !e.metaKey && !e.altKey) {
+            toggleTheme();
+        }
+        if ((e.key === 'l' || e.key === 'L') && !e.ctrlKey && !e.metaKey && !e.altKey) {
+            toggleLanguage();
+        }
+    });
+}
+
+// ============================================================
+// INIT
+// ============================================================
+document.addEventListener('DOMContentLoaded', () => {
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    initTheme();
+    initLanguage();
+
+    createParticles();
+    initClickTracking();
+    initClicksCounter();
+    initViewsCounter();
+
+    initPromoNotification();
+    initPageTitleEffect();
+    initKeyboardShortcuts();
+
+    setTimeout(() => {
+        showToast(t('toast_welcome'), 'info');
+    }, 1500);
+
+    console.log('%c🌟 VEX BIO LINK', 'color:#00e5ff;font-size:20px;font-weight:900;text-shadow:0 0 20px #00e5ff;');
+    console.log('%cShortcuts: T = Theme | L = Language', 'color:#fbbf24;font-size:11px;');
+});
+    </script>
+</body>
+</html>
